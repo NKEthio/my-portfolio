@@ -14,6 +14,12 @@ const Projects = () => {
       description: "A comprehensive medical device e-commerce platform designed to provide a seamless shopping experience for healthcare professionals and organizations.",
       tech: ["React", "Next.js", "Tailwind CSS", "E-commerce"],
       link: "https://github.com/NKEthio/MedShop"
+    },
+    {
+      title: "Bear",
+      description: "A fun and interactive language learning application",
+      tech: ["React","Vite", "Firebase", "E-learning"],
+      link: "https://github.com/NKEthio/Bear"
     }
   ];
 
