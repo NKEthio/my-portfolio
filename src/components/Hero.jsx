@@ -1,12 +1,18 @@
 import React from 'react';
+import profilePlaceholder from '@/assets/profile-placeholder.svg';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 overflow-hidden">
+    <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 overflow-hidden" id="home">
       {/* Background Pattern Overlay */}
       <div className="absolute inset-0 tibeb-pattern pointer-events-none"></div>
       
       <div className="relative z-10 max-w-4xl">
+        <img
+          src={profilePlaceholder}
+          alt="Profile placeholder"
+          className="w-36 h-36 md:w-44 md:h-44 rounded-full border-4 border-ethiopia-yellow shadow-xl mx-auto mb-8 object-cover bg-white"
+        />
         <h1 className="text-5xl md:text-7xl font-bold mb-4 tracking-tight text-gray-900 dark:text-white">
           Nuredin <span className="text-ethiopia-green">Kassaw</span>
         </h1>
