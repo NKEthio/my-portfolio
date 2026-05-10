@@ -2,11 +2,11 @@ import React from 'react';
 import ThemeToggle from './ThemeToggle';
 
 const navItems = [
-  { label: 'Home', href: '#home', key: 'home' },
-  { label: 'About', href: '#about', key: 'about' },
-  { label: 'Projects', href: '#projects', key: 'projects' },
-  { label: 'Skills', href: '#skills', key: 'skills' },
-  { label: 'Hobbies', href: '#hobbies', key: 'hobbies' },
+  { label: 'Home', href: '#home', key: 'home', activeClass: 'text-ethiopia-green', hoverClass: 'hover:text-ethiopia-green' },
+  { label: 'About', href: '#about', key: 'about', activeClass: 'text-ethiopia-yellow', hoverClass: 'hover:text-ethiopia-yellow' },
+  { label: 'Projects', href: '#projects', key: 'projects', activeClass: 'text-ethiopia-red', hoverClass: 'hover:text-ethiopia-red' },
+  { label: 'Skills', href: '#skills', key: 'skills', activeClass: 'text-ethiopia-green', hoverClass: 'hover:text-ethiopia-green' },
+  { label: 'Hobbies', href: '#hobbies', key: 'hobbies', activeClass: 'text-ethiopia-yellow', hoverClass: 'hover:text-ethiopia-yellow' },
 ];
 
 const Navbar = ({ currentPage }) => {
@@ -25,8 +25,8 @@ const Navbar = ({ currentPage }) => {
               href={item.href}
               className={`hidden sm:block transition-colors ${
                 currentPage === item.key
-                  ? 'text-ethiopia-red'
-                  : 'hover:text-ethiopia-green'
+                  ? item.activeClass
+                  : item.hoverClass
               }`}
             >
               {item.label}
