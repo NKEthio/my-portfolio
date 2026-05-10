@@ -34,13 +34,14 @@ export default function App() {
   }, []);
 
   const ActivePage = pageComponents[currentPage];
-  const pageContent = <ActivePage />;
 
   return (
     <main className="min-h-screen bg-shemma dark:bg-zinc-900 text-black dark:text-shemma transition-colors duration-300">
       <div className="tibeb-border fixed top-0 left-0 right-0 z-[60]"></div>
       <Navbar currentPage={currentPage} />
-      <div className="pt-16">{pageContent}</div>
+      <div className="pt-16">
+        <ActivePage />
+      </div>
 
       <footer className="py-12 border-t border-gray-100 dark:border-gray-800 text-center text-gray-500 text-sm">
         <p>© {new Date().getFullYear()} Nuredin Kassaw. Built with React & Tailwind CSS.</p>
