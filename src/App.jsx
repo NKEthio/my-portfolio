@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
@@ -26,21 +26,11 @@ export default function App() {
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
-  const pageContent = useMemo(() => {
-    switch (currentPage) {
-      case 'about':
-        return <About />;
-      case 'projects':
-        return <Projects />;
-      case 'skills':
-        return <Skills />;
-      case 'hobbies':
-        return <Hobbies />;
-      case 'home':
-      default:
-        return <Hero />;
-    }
-  }, [currentPage]);
+  let pageContent = <Hero />;
+  if (currentPage === 'about') pageContent = <About />;
+  if (currentPage === 'projects') pageContent = <Projects />;
+  if (currentPage === 'skills') pageContent = <Skills />;
+  if (currentPage === 'hobbies') pageContent = <Hobbies />;
 
   return (
     <main className="min-h-screen bg-shemma dark:bg-zinc-900 text-black dark:text-shemma transition-colors duration-300">

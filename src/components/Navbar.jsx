@@ -2,12 +2,18 @@ import React from 'react';
 import ThemeToggle from './ThemeToggle';
 
 const navItems = [
-  { label: 'Home', href: '#home', key: 'home', activeClass: 'text-ethiopia-green', hoverClass: 'hover:text-ethiopia-green' },
-  { label: 'About', href: '#about', key: 'about', activeClass: 'text-ethiopia-yellow', hoverClass: 'hover:text-ethiopia-yellow' },
-  { label: 'Projects', href: '#projects', key: 'projects', activeClass: 'text-ethiopia-red', hoverClass: 'hover:text-ethiopia-red' },
-  { label: 'Skills', href: '#skills', key: 'skills', activeClass: 'text-ethiopia-green', hoverClass: 'hover:text-ethiopia-green' },
-  { label: 'Hobbies', href: '#hobbies', key: 'hobbies', activeClass: 'text-ethiopia-yellow', hoverClass: 'hover:text-ethiopia-yellow' },
+  { label: 'Home', href: '#home', key: 'home', color: 'green' },
+  { label: 'About', href: '#about', key: 'about', color: 'yellow' },
+  { label: 'Projects', href: '#projects', key: 'projects', color: 'red' },
+  { label: 'Skills', href: '#skills', key: 'skills', color: 'green' },
+  { label: 'Hobbies', href: '#hobbies', key: 'hobbies', color: 'yellow' },
 ];
+
+const navColorClasses = {
+  green: { active: 'text-ethiopia-green', hover: 'hover:text-ethiopia-green' },
+  yellow: { active: 'text-ethiopia-yellow', hover: 'hover:text-ethiopia-yellow' },
+  red: { active: 'text-ethiopia-red', hover: 'hover:text-ethiopia-red' },
+};
 
 const Navbar = ({ currentPage }) => {
   return (
@@ -25,8 +31,8 @@ const Navbar = ({ currentPage }) => {
               href={item.href}
               className={`hidden sm:block transition-colors ${
                 currentPage === item.key
-                  ? item.activeClass
-                  : item.hoverClass
+                  ? navColorClasses[item.color].active
+                  : navColorClasses[item.color].hover
               }`}
             >
               {item.label}
