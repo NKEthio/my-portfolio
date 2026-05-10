@@ -8,7 +8,8 @@ import Hobbies from '@/components/Hobbies';
 
 export default function App() {
   return (
-    <main className="min-h-screen bg-white dark:bg-black text-black dark:text-white">
+    <main className="min-h-screen bg-shemma dark:bg-zinc-900 text-black dark:text-shemma transition-colors duration-300">
+      <div className="tibeb-border fixed top-0 left-0 right-0 z-[60]"></div>
       <Navbar />
       <Hero />
       <About />
