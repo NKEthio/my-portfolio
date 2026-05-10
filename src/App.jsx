@@ -7,6 +7,13 @@ import Skills from '@/components/Skills';
 import Hobbies from '@/components/Hobbies';
 
 const validPages = ['home', 'about', 'projects', 'skills', 'hobbies'];
+const pageComponents = {
+  home: Hero,
+  about: About,
+  projects: Projects,
+  skills: Skills,
+  hobbies: Hobbies,
+};
 
 const getPageFromHash = () => {
   const page = window.location.hash.replace('#', '').toLowerCase();
@@ -26,11 +33,8 @@ export default function App() {
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
-  let pageContent = <Hero />;
-  if (currentPage === 'about') pageContent = <About />;
-  if (currentPage === 'projects') pageContent = <Projects />;
-  if (currentPage === 'skills') pageContent = <Skills />;
-  if (currentPage === 'hobbies') pageContent = <Hobbies />;
+  const ActivePage = pageComponents[currentPage] || Hero;
+  const pageContent = <ActivePage />;
 
   return (
     <main className="min-h-screen bg-shemma dark:bg-zinc-900 text-black dark:text-shemma transition-colors duration-300">

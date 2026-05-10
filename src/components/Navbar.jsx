@@ -2,11 +2,11 @@ import React from 'react';
 import ThemeToggle from './ThemeToggle';
 
 const navItems = [
-  { label: 'Home', href: '#home', key: 'home', color: 'green' },
-  { label: 'About', href: '#about', key: 'about', color: 'yellow' },
-  { label: 'Projects', href: '#projects', key: 'projects', color: 'red' },
-  { label: 'Skills', href: '#skills', key: 'skills', color: 'green' },
-  { label: 'Hobbies', href: '#hobbies', key: 'hobbies', color: 'yellow' },
+  { key: 'home', color: 'green' },
+  { key: 'about', color: 'yellow' },
+  { key: 'projects', color: 'red' },
+  { key: 'skills', color: 'green' },
+  { key: 'hobbies', color: 'yellow' },
 ];
 
 const navColorClasses = {
@@ -16,6 +16,8 @@ const navColorClasses = {
 };
 
 const Navbar = ({ currentPage }) => {
+  const getLabel = (key) => key.charAt(0).toUpperCase() + key.slice(1);
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-shemma/90 dark:bg-zinc-900/90 backdrop-blur-md border-b-2 border-ethiopia-yellow">
       <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
@@ -28,14 +30,14 @@ const Navbar = ({ currentPage }) => {
           {navItems.map((item) => (
             <a
               key={item.key}
-              href={item.href}
+              href={`#${item.key}`}
               className={`hidden sm:block transition-colors ${
                 currentPage === item.key
                   ? navColorClasses[item.color].active
                   : navColorClasses[item.color].hover
               }`}
             >
-              {item.label}
+              {getLabel(item.key)}
             </a>
           ))}
           <ThemeToggle />
