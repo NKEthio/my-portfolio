@@ -10,7 +10,7 @@ const Hero = () => {
       <div className="relative z-10 max-w-4xl">
         <img
           src={profilePlaceholder}
-          alt="Profile placeholder"
+          alt="Nuredin Kassaw profile photo placeholder"
           className="w-36 h-36 md:w-44 md:h-44 rounded-full border-4 border-ethiopia-yellow shadow-xl mx-auto mb-8 object-cover bg-white"
         />
         <h1 className="text-5xl md:text-7xl font-bold mb-4 tracking-tight text-gray-900 dark:text-white">

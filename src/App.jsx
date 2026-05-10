@@ -33,7 +33,7 @@ export default function App() {
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
-  const ActivePage = pageComponents[currentPage] || Hero;
+  const ActivePage = pageComponents[currentPage];
   const pageContent = <ActivePage />;
 
   return (
