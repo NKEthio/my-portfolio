@@ -35,7 +35,11 @@ const Projects = () => {
         <div className="grid md:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <div key={index} className="bg-shemma dark:bg-zinc-800 p-6 rounded-xl border-t-4 border-ethiopia-red shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="mb-5 rounded-lg border-2 border-dashed border-ethiopia-yellow/70 bg-white/80 dark:bg-zinc-700/60 h-40 flex items-center justify-center text-center px-4">
+              <div
+                role="img"
+                aria-label={`${project.title} website preview placeholder`}
+                className="mb-5 rounded-lg border-2 border-dashed border-ethiopia-yellow/70 bg-white/80 dark:bg-zinc-700/60 h-40 flex items-center justify-center text-center px-4"
+              >
                 <p className="text-xs font-bold uppercase tracking-wider text-gray-600 dark:text-gray-200">
                   Project website image placeholder
                 </p>

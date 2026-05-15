@@ -24,7 +24,11 @@ const Certificates = () => {
         <div className="grid md:grid-cols-2 gap-8">
           {certificates.map((certificate, index) => (
             <div key={index} className="bg-white dark:bg-zinc-800 p-6 rounded-xl shadow-lg border-l-4 border-ethiopia-green">
-              <div className="mb-5 rounded-lg border-2 border-dashed border-ethiopia-green/60 h-44 bg-shemma/40 dark:bg-zinc-700/50 flex items-center justify-center px-4 text-center">
+              <div
+                role="img"
+                aria-label={`${certificate.title} certificate preview placeholder`}
+                className="mb-5 rounded-lg border-2 border-dashed border-ethiopia-green/60 h-44 bg-shemma/40 dark:bg-zinc-700/50 flex items-center justify-center px-4 text-center"
+              >
                 <p className="text-xs font-bold uppercase tracking-wider text-gray-700 dark:text-gray-200">
                   Certificate image placeholder
                 </p>
