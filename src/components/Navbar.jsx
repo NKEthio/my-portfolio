@@ -14,6 +14,7 @@ const Navbar = () => {
           <a href="#" className="hidden sm:block hover:text-ethiopia-green transition-colors">Home</a>
           <a href="#about" className="hidden sm:block hover:text-ethiopia-yellow transition-colors">About</a>
           <a href="#projects" className="hidden sm:block hover:text-ethiopia-red transition-colors">Projects</a>
+          <a href="#certificates" className="hidden sm:block hover:text-ethiopia-yellow transition-colors">Certificates</a>
           <a href="#skills" className="hidden sm:block hover:text-ethiopia-green transition-colors">Skills</a>
           <ThemeToggle />
           <a 
