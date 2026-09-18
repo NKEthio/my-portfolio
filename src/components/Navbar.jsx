@@ -9,10 +9,8 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-shemma/90 dark:bg-zinc-900/90 backdrop-blur-md border-b-2 border-ethiopia-yellow">
       <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-        <Link to="/" className="text-2xl font-black tracking-tighter flex items-center">
-          <span className="text-ethiopia-green">N</span>
-          <span className="text-ethiopia-yellow">K</span>
-          <span className="text-ethiopia-red">.</span>
+        <Link to="/" className="flex items-center gap-2">
+          <img src="/logo.png" alt="Logo" className="h-9 w-auto object-contain" />
         </Link>
         <div className="flex gap-4 md:gap-8 items-center text-sm font-bold uppercase tracking-widest">
           <Link to="/" className="hidden sm:block hover:text-ethiopia-green transition-colors">Home</Link>
