@@ -1,20 +1,13 @@
-import React, { Suspense, lazy } from 'react';
+import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { blogPosts } from '../content/blogs/posts';
 
-// Lazy map MDX files
-const mdxModules = {
-  'is-ai-revolution-elusive-for-ethiopia': lazy(() => import('../content/blogs/is-ai-revolution-elusive-for-ethiopia.mdx')),
-  'building-performant-web-apps-with-react-and-vite': lazy(() => import('../content/blogs/building-performant-web-apps-with-react-and-vite.mdx')),
-};
-
 const BlogPost = () => {
   const { slug } = useParams();
   const post = blogPosts.find((p) => p.slug === slug);
-  const MdxContent = mdxModules[slug];
 
-  if (!post || !MdxContent) {
+  if (!post || !post.Component) {
     return (
       <div className="min-h-screen bg-shemma dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 pt-32 pb-16 px-4 text-center">
         <h1 className="text-3xl font-bold mb-4">Post Not Found</h1>
@@ -29,6 +22,7 @@ const BlogPost = () => {
     );
   }
 
+  const MdxContent = post.Component;
   const postUrl = `https://nuredin.pro.et/blog/${post.slug}`;
 
   // Structured Data (JSON-LD) for Google Search SEO
@@ -111,9 +105,7 @@ const BlogPost = () => {
         </header>
 
         <div className="prose prose-zinc dark:prose-invert prose-lg max-w-none prose-headings:font-bold prose-a:text-ethiopia-green">
-          <Suspense fallback={<div className="py-12 text-center text-zinc-500">Loading article...</div>}>
-            <MdxContent />
-          </Suspense>
+          <MdxContent />
         </div>
 
         <footer className="mt-12 pt-8 border-t border-zinc-200 dark:border-zinc-800 flex items-center justify-between">

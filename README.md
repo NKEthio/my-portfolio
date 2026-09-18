@@ -16,6 +16,29 @@ A modern, responsive personal portfolio built with **React**, **Vite**, and **Ta
 - [Tailwind CSS 3](https://tailwindcss.com/)
 - ESLint for code linting
 
+## 📝 How to Add Blog Posts
+
+Adding a blog post takes just **1 simple step**:
+
+Create a new `.mdx` file in `src/content/blogs/` (e.g., `src/content/blogs/my-new-article.mdx`) with YAML frontmatter at the top:
+
+```markdown
+---
+title: "My New Article Title"
+date: "2025-02-28"
+author: "Nuredin Kassaw"
+readTime: "4 min read"
+tags: ["React", "Web Development"]
+summary: "A brief summary of what this article covers."
+---
+
+# My New Article
+
+Write your article content using Markdown or React JSX elements here!
+```
+
+That's it! Vite will automatically discover the new post, extract the metadata, sort it by date, and make it available on the `/blog` listing and `/blog/my-new-article` route without editing any JavaScript configuration files.
+
 ## 📂 Project Structure
 
 ```text
